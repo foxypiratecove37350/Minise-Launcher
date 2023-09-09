@@ -8,7 +8,7 @@
     padding: 20px;
     font: normal normal bold 19px/29px Poppins;
     color: #E1E1E1;
-    border-radius: 15px;
+    border-radius: 10px;
     text-align: center;
 }
 
@@ -18,31 +18,29 @@
 }
 
 .login-type-btn {
-    border-radius: 15px;
+    border-radius: 10px;
     border: none;
     margin: 2% 0;
     height: 2em;
-    background-color: #00bd7a;
-    box-shadow: 0 0 5px #00bd7a;
-    color: #121212;
+    background-color: #54539f;
+    transition: background-color 0.2s ease;
+    color: #fff;
     font: normal normal bold 19px/29px Poppins;
     cursor: pointer;
 }
 
 .login-type-btn:hover {
-    background-color: #006e47;
-    box-shadow: 0 0 5px #006e47;
+    background-color: #474686;
 }
 
 .login-type-btn:disabled {
-    background-color: #00bd7a;
-    box-shadow: 0 0 5px #00bd7a;
+    background-color: #7a79b9;
     cursor: default;
 }
 
 .login-type-btn:disabled:hover {
-    background-color: #00bd7a;
-    box-shadow: 0 0 5px #00bd7a;
+    background-color: #54539f;
+    transition: background-color 0.2s ease;
 }
 
 .login-card-mojang {
@@ -54,8 +52,9 @@
     background: #121212;
     padding: 0 20px;
     font: normal normal bold 19px/29px Poppins;
+    transition: color 0.2s ease;
     color: #E1E1E1;
-    border-radius: 15px;
+    border-radius: 10px;
     display: none;
 }
 
@@ -71,9 +70,10 @@
 .login-mojang-input {
     font-family: 'Poppins';
     letter-spacing: 2px;
+    transition: color 0.2s ease;
     color: #fff;
     border: solid 0px rgba(0, 0, 0, 0);
-    border-radius: 30px;
+    border-radius: 10px;
     background-color: #373737;
     padding: 0.375rem 0.75rem;
 }
@@ -90,35 +90,37 @@
 }
 
 .login-btn {
-    border-radius: 15px;
+    border-radius: 10px;
     border: none;
     margin: 2% 0;
     height: 2em;
-    background-color: #00bd7a;
-    box-shadow: 0 0 5px #00bd7a;
-    color: #121212;
+    background-color: #54539f;
+    transition: background-color 0.2s ease;
+    color: #fff;
     font: normal normal bold 19px/29px Poppins;
     cursor: pointer;
 }
 
 .login-btn:hover {
-    background-color: #006e47;
-    box-shadow: 0 0 5px #006e47;
+    background-color: #474686;
 }
 
 .cancel {
     border: none;
     background-color: #ffffff00;
-    color: #F1F1F1;
+    transition: color 0.2s ease;
+    color: #fff;
     font: normal normal bold 19px/29px Poppins;
     cursor: pointer;
 }
 
 .cancel:hover {
-    color: #373737;
+    transition: color 0.2s ease;
+    color: #787878;
 }
 
 .cancel:hover:disabled {
-    color: #F1F1F1;
+    transition: color 0.2s ease;
+    color: #494949;
     cursor: default;
 }

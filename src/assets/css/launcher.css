@@ -10,13 +10,21 @@
 body {
     margin: 0;
     padding: 0;
+    -webkit-user-select: none;
     user-select: none;
     background: linear-gradient(#00000066, #00000066), url("../images/background/light.jpg") black no-repeat center center scroll;
+    background-size: cover;
+    height: 100vh;
 }
 
 img {
     -webkit-user-drag: none;
+    -webkit-user-select: none;
     user-select: none;
+}
+
+a[href] {
+    color: #7a79b9;
 }
 
 .dragbar {

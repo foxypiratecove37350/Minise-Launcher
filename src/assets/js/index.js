@@ -22,9 +22,12 @@ class Splash {
 
     async startAnimation() {
         let splashes = [
-            { "message": "Je... vie...", "author": "Luuxis" },
-            { "message": "Salut je suis du code.", "author": "Luuxis" },
-            { "message": "Linux n' ai pas un os, mais un kernel.", "author": "Luuxis" }
+            { "message": "La Misine se trouve en dessous de la couche 12 !", "author": "foxypiratecove37350" },
+            { "message": "La pioche en Saphire mine du 3 par 3 !", "author": "foxypiratecove37350" },
+            { "message": "La pioche en Misine a une durabilité de 3000 !", "author": "foxypiratecove37350" },
+            { "message": "Le jet pack a une durabilité infinie !", "author": "foxypiratecove37350" },
+            { "message": "Le jet pack permet de voler haut !", "author": "foxypiratecove37350" },
+            { "message": "Le saphir est plus rare que le diamant !", "author": "foxypiratecove37350" }
         ]
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;
@@ -38,18 +41,18 @@ class Splash {
         this.splashMessage.classList.add("opacity");
         this.splashAuthor.classList.add("opacity");
         this.message.classList.add("opacity");
-        await sleep(1000);
+        await sleep(3000);
         this.checkUpdate();
     }
 
     async checkUpdate() {
         if (dev) return this.startLauncher();
-        this.setStatus(`recherche de mise à jour...`);
+        this.setStatus(`Recherche de mise à jour...`);
 
         ipcRenderer.invoke('update-app').then(err => {
             if (err.error) {
                 let error = err.message;
-                this.shutdown(`erreur lors de la recherche de mise à jour :<br>${error}`);
+                this.shutdown(`Erreur lors de la recherche de mise à jour :<br>${error}`);
             }
         })
 
@@ -79,7 +82,7 @@ class Splash {
     }
 
     startLauncher() {
-        this.setStatus(`Démarrage du launcher`);
+        this.setStatus(`Démarrage du Launcher`);
         ipcRenderer.send('main-window-open');
         ipcRenderer.send('update-window-close');
     }

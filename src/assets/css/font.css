@@ -44,5 +44,6 @@
 .icon-restore-down:before { font-family: "Icons"; content: "\e90d"; }
 .icon-account-add:before { font-family: "Icons"; content: "\e901"; }
 .icon-account-delete:before { font-family: "Icons"; content: "\e902"; }
-.icon-settings:before { font-family: "Icons"; content: "\e909"; }
+.icon-settings:before { font-family: "Icons"; content: "\e909"; color: #fff; }
+.icon-launcher-infos:before { font-family: "Icons"; content: "\e911"; color: #fff; }
 .icon-monitor:before { font-family: "Icons"; content: "\e90a"; }

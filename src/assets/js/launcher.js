@@ -9,8 +9,9 @@
 const fs = require('fs');
 const { Microsoft, Mojang } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
+const pkg = require('../package.json');
 
-import { config, logger, changePanel, database, addAccount, accountSelect } from './utils.js';
+import { config, logger, changePanel, database, addAccount, accountSelect, launcherInfos } from './utils.js';
 import Login from './panels/login.js';
 import Home from './panels/home.js';
 import Settings from './panels/settings.js';
@@ -25,6 +26,7 @@ class Launcher {
         this.database = await new database().init();
         this.createPanels(Login, Home, Settings);
         this.getaccounts();
+        launcherInfos(pkg);
     }
 
     initLog() {

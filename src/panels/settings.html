@@ -1,14 +1,29 @@
 <div class="settings-content">
     <div class="tabs-settings-btn">
+        <button class="tab-btn launcher-infos-btn icon-launcher-infos">­</button>
         <button class="tab-btn-css tab-btn active-tab-btn default-tab-btn">Comptes</button>
         <button class="tab-btn-css tab-btn">Java</button>
         <button class="tab-btn-css tab-btn">Launcher</button>
         <button class="tab-btn-css save-tabs-btn">Sauvegarder</button>
     </div>
 
+    <div class="tabs-settings-content">
+        <div class="center-page">
+            <div class="title-settings">Informations sur le Launcher.</div>
+            <div class="java-settings">
+                <div class="information launcher-infos-tab-content">
+                    Version Misine Launcher : ${launcherVersion}<br>
+                    Version Selvania Launcher (base open-source) : ${selveniaLauncherVersion}<br>
+                    Version Chromium (base open-source) : ${chromiumVersion}<br>
+                    Version ElectronJS (base open-source) : ${electronJsVersion}
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="tabs-settings-content active-tab-content">
         <div class="center-align">
-            <button class="add-account">Ajouter un compte</button>
+            <button class="add-account">Ajouter un compte</button><br>
             <div class="accounts"></div>
         </div>
     </div>

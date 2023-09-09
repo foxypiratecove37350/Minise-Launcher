@@ -8,7 +8,7 @@
 import { logger, database, changePanel } from '../utils.js';
 
 const { Launch, Status } = require('minecraft-java-core');
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, shell } = require('electron');
 const launch = new Launch();
 const pkg = require('../package.json');
 
@@ -62,9 +62,13 @@ class Home {
                         <div class="news-content">
                             <div class="bbWrapper">
                                 <p>${News.content.replace(/\n/g, '</br>')}</p>
-                                <p class="news-author">Auteur,<span> ${News.author}</span></p>
+                                <p class="news-author">Auteur : <span>${News.author}</span></p>
                             </div>
                         </div>`
+                    blockNews.querySelectorAll('a[href][target=_blank]').forEach(link => link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        shell.openExternal(e.target.href)
+                    }));
                     news.appendChild(blockNews);
                 }
             }
@@ -109,7 +113,7 @@ class Home {
             }
 
             let opts = {
-                url: this.config.game_url === "" || this.config.game_url === undefined ? `${urlpkg}/files` : this.config.game_url,
+                url: this.config.game_url === "" || this.config.game_url === undefined ? `${urlpkg}/launcher/files` : this.config.game_url,
                 authenticator: account,
                 timeout: 10000,
                 path: `${dataDirectory}/${process.platform == 'darwin' ? this.config.dataDirectory : `.${this.config.dataDirectory}`}`,
@@ -227,7 +231,7 @@ class Home {
         let year = date.getFullYear()
         let month = date.getMonth() + 1
         let day = date.getDate()
-        let allMonth = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+        let allMonth = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
         return { year: year, month: allMonth[month - 1], day: day }
     }
 }

@@ -4,12 +4,19 @@ body {
     font-family: "Poppins";
     letter-spacing: 0px;
     -webkit-app-region: drag;
+    -webkit-user-select: none;
     user-select: none;
 }
 
 img {
     -webkit-user-drag: none;
+    -webkit-user-select: none;
     user-select: none;
+    border-radius: 50%;
+}
+
+a[href] {
+    color: #7a79b9;
 }
 
 .splash {
