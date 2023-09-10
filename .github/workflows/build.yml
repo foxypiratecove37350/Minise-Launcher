@@ -6,6 +6,7 @@ on:
 
 jobs:
   create-release:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,6 +27,7 @@ jobs:
           prerelease: ${{ contains(env.version, 'beta') || contains(env.version, 'alpha') }}
 
   build-launcher:
+    permissions: write-all
     needs: create-release
     runs-on: ${{ matrix.os }}
 
